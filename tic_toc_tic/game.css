@@ -1,0 +1,134 @@
+/* Basic Reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #4C5760;
+    text-align: center;
+}
+
+/* Container to hold the game */
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+/* Style for each box in the game */
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    align-items: center;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #ffffc7;
+}
+
+/* Styling for reset button */
+.rst {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: antiquewhite;
+    border-radius: 1rem;
+    border: none;
+}
+
+/* Styling for the winner message */
+#msg {
+    color: #ffffc7;
+    font-size: 8vmin;
+}
+
+/* Container for the winner message */
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Hide the message container initially */
+.hide {
+    display: none;
+}
+
+/* New game button styling */
+#new-btn {
+    background-color: #191913;
+    color: white;
+}
+
+/* Sprinkle Container */
+.sprinkle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10; /* Ensure it appears above everything */
+    pointer-events: none; /* Don't interfere with game clicks */
+}
+
+/* Star Effect (Sprinkle) */
+.star-effect {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.8), rgba(255, 215, 0, 0.8)); /* Star yellow gradient */
+    animation: sprinkle 1s ease-out forwards;
+    opacity: 1;
+}
+
+/* Rose Effect (Sprinkle) */
+.rose-effect {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.8), rgba(255, 99, 71, 0.8)); /* Rose-like gradient */
+    animation: sprinkle 1s ease-out forwards;
+    opacity: 1;
+}
+
+/* Sprinkle Effect (Default) */
+.sprinkle-effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff69b4; /* Pink color */
+    animation: sprinkle 1s ease-out forwards;
+    opacity: 1;
+}
+
+/* Keyframes for sprinkle animations */
+@keyframes sprinkle {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(1);
+        opacity: 0;
+    }
+}
